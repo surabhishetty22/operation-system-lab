@@ -1,5 +1,5 @@
 #include<stdio.h>
-void Sorter(int priority[],int n,int processes[],int burst_time[],int arrival_time[])
+void Sorter(int priority[],int n,int processes[],int burst_time[],int arrival_time[],int key)
 {
     for (int i = 0; i < n; i++)//sorting in priority
     {
@@ -34,7 +34,7 @@ void roundRobin(int processes[],int n,int burst_time[],int quantum,int arrival_t
     int remaining_time[n],WT[n],TAT[n],total_WT=0,total_TAT=0,time=0,RT[n],flag[n],avg_RT=0;
     int completion_time[n];
     int all_processes_completed[n],idle=0;
-    Sorter(priority,n,processes,burst_time,arrival_time);
+    Sorter(priority,n,processes,burst_time,arrival_time,3);
     for (int i = 0; i < n; i++)//setting remaining time
     {
         remaining_time[i]=burst_time[i];
@@ -88,7 +88,7 @@ void roundRobin(int processes[],int n,int burst_time[],int quantum,int arrival_t
         WT[i]=TAT[i]-burst_time[i];
         total_WT+=WT[i];
     }
-    printf("\nRound Robin algorithm\n");
+    printf("\nROund RObin algorithm\n");
     printf("Processes\tAT\tBT\tPriority\tWT\tTAT\tCT\tRT\n");
     for (int i = 0; i < n; i++)
     {
@@ -100,34 +100,8 @@ void roundRobin(int processes[],int n,int burst_time[],int quantum,int arrival_t
     printf("Total Idle time: %d\n",idle);
     printf("\n");
 }
-void main() {
-    /*output
-    Enter the number of processes: 4
-    Enter the arrival time for process 1:2
-    Enter the Burst time for processes 1:1
-    Enter the priority for process 1:1
-    Enter the arrival time for process 2:1
-    Enter the Burst time for processes 2:5
-    Enter the priority for process 2:1
-    Enter the arrival time for process 3:4
-    Enter the Burst time for processes 3:1
-    Enter the priority for process 3:1
-    Enter the arrival time for process 4:0
-    Enter the Burst time for processes 4:6
-    Enter the priority for process 4:1
-    Enter the time quantum for round robin: 2
-
-    Round Robin algorithm
-    Processes       AT      BT      Priority        WT      TAT     CT      RT
-    1               2       1       1               0       1       3       0
-    2               1       5       1               7       12      13      2
-    3               4       1       1               1       2       6       1
-    4               0       6       1               6       12      12      0
-    AVG waiting time: 3.500000
-    AVG turnaround time: 6.750000
-    AVG Response time: 0.750000
-    Total Idle time: 0
-    */
+void main()
+{
     int n;
     int quantum;
     printf("Enter the number of processes: ");
@@ -147,3 +121,31 @@ void main() {
     scanf("%d",&quantum);
     roundRobin(processes,n,burst_time,quantum,arrival_time,prioritylist);
 }
+//* 
+OUTPUT
+----------------------------------------------------------------------
+    Enter the number of processes: 4
+Enter the arrival time for process 1:2
+Enter the Burst time for processes 1:1
+Enter the priority for process 1:1
+Enter the arrival time for process 2:1
+Enter the Burst time for processes 2:5
+Enter the priority for process 2:1
+Enter the arrival time for process 3:4
+Enter the Burst time for processes 3:1
+Enter the priority for process 3:1
+Enter the arrival time for process 4:0
+Enter the Burst time for processes 4:6
+Enter the priority for process 4:1
+Enter the time quantum for round robin: 2
+
+ROund RObin algorithm
+Processes       AT      BT      Priority        WT      TAT     CT      RT
+1               2       1       1               0       1       3       0
+2               1       5       1               7       12      13      2
+3               4       1       1               1       2       6       1
+4               0       6       1               6       12      12      0
+AVG waiting time: 3.500000
+AVG turnaround time: 6.750000
+AVG Response time: 0.750000
+Total Idle time: 0    *//
