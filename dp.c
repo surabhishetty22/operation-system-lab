@@ -30,7 +30,7 @@ int main()
   // Run the philosopher Threads using *dine() function
   for (i = 1; i <= NUM_PHILOSOPHERS; i++)
   {
-    status_message = pthread_create(&philosopher[i], NULL, (void *)dine,(int *)i);
+    status_message = pthread_create(&philosopher[i],NULL,(void*)dine,(int *)i);
     if (status_message != 0)
     {
       printf("\n Thread creation error \n");
@@ -73,7 +73,6 @@ void dine(int n)
 
   // After picking up both the chopstick philosopher starts eating
   printf("\nPhilosopher % d is eating ", n);
-  sleep(3);
 
   // Philosopher places down the left chopstick (signal)
   pthread_mutex_unlock(&chopstick[n]);
