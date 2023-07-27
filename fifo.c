@@ -33,3 +33,28 @@ int main()
     printf("Page Fault is %d ",fault);
     return 0;
 }
+/*
+output:
+
+ Enter the number of pages:
+6
+
+ Enter the page number:
+1
+2
+3
+2
+1
+5
+
+Enter the number of frames:
+3
+        input   page frames
+1               1       -1      -1
+2               1       2       -1
+3               1       2       3
+2
+1
+5               5       2       3
+Page Fault is 4 
+    */
