@@ -68,3 +68,24 @@ int main(){
     printf("\nTotal head movement is %d",TotalHeadMoment);
     return 0;
 }
+/*
+Enter the number of requestes: 
+7
+Enter request Sequence
+82
+170
+43
+140
+24
+16
+190
+Enter intial head position
+50
+Enter total disk size
+200
+Enter the head movement direction for high 1 and low 0
+1
+Sequence of request access: 
+82 140 170 190 43 24 16 
+Total head movement is 332
+*/
