@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-
 int main(){
     int RQ[100],i,j,n,TotalHeadMoment=0,initial,size,move;
     printf("Enter the number of requestes: \n");
