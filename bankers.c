@@ -14,7 +14,7 @@ void main(){
     scanf("%d",&pno);
     printf("\n Enter the allocation matrix \n     ");
     for(i=0;i<rz;i++)
-        printf(" %c",(i+97));
+    printf(" %c",(i+97));
     printf("\n");
     for(i=0;i <pno;i++)
     {
@@ -49,13 +49,13 @@ void main(){
         {
             need[t][j] = max[t][j]-allocated[t][j];
             if(need[t][j]<=avail[j])
-                count++;
+            count++;
         }
         if(count==rz)
         {
             output[k++]=P[i];
             for(j=0;j<rz;j++)
-                avail[j]+=allocated[t][j];
+            avail[j]+=allocated[t][j];
         }
         else
             P[++d]=P[i];
@@ -67,9 +67,9 @@ void main(){
     }
     printf("\t <");
     for(i=0;i<k;i++)
-        printf(" P[%d] ",output[i]);
+    printf(" P[%d] ",output[i]);
     printf(">");
-    // getch();
+    getch();
 }
 /* Enter the number of resources : 3
 enter the max instances of each resources

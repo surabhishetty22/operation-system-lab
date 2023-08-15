@@ -5,7 +5,7 @@ int main()
     printf("\n Enter the number of pages:\n");
     scanf("%d",&n);
     printf("\n Enter the page number:\n");
-    for(i=1;i<=n;i++)
+    for(i=0;i<n;i++)
     scanf("%d",&a[i]);
     printf("\nEnter the number of frames:\n");
     scanf("%d",&no);
@@ -13,7 +13,7 @@ int main()
     frame[i]=-1;
     j=0;
     printf("\tinput\tpage frames\n");
-    for(i=1;i<=n;i++)
+    for(i=0;i<n;i++)
     {
         printf("%d\t\t",a[i]);
         avail=0;
